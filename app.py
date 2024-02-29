@@ -48,5 +48,10 @@ def sub():
 
     return render_template("dat.html", data = data)
 
+@app.route("/download")
+def Download_File():
+    PATH = "Divisions.db"
+    return send_file(PATH, as_attachment=True)
+
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
